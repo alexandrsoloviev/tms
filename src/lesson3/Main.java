@@ -10,8 +10,8 @@ public class Main {
 
 //        Task3 task3= new Task3();
 //        task3.evenNotEven();
-        Task4 task4 = new Task4();
-        task4.mode();
+//        Task4 task4 = new Task4();
+//        task4.mode();
 
     }
 }

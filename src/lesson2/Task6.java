@@ -6,6 +6,8 @@ public class Task6 {
     public void bubbleSort() {
         int[] arr = {2, 4, 5, 7, 8};
 
+
+
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
 

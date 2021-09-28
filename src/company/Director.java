@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class Director extends Employee {
 
 
-    private Employee[] employees;
-    private int newKoef = employees.length * 500;
+     public Employee[] employees;
+
 
     @Override
     public PROFESSION setProfession() {
@@ -17,26 +17,33 @@ public class Director extends Employee {
         super(name, surname, exp);
     }
 
-    public void addWorker(Employee employee){
-        if(employees==null){
-            employees=new Employee[1];
+    public void addWorker(Employee employee) {
+        if (employees == null) {
+            employees = new Employee[1];
             employees[0] = employee;
-        }else employees = Arrays.copyOf(employees,employees.length+1);
-              employees[employees.length-1]=employee;
+        } else {
+            employees = Arrays.copyOf(employees, employees.length + 1);
+            employees[employees.length - 1] = employee;
+        }
     }
 
     @Override
     public int getSalary() {
         if (employees == null) {
-           return super.getSalary();
-        } else return (getSalary() + newKoef);
+            return super.getSalary();
+        } else {
+            return (super.getSalary() + (employees.length * 500));
+        }
 
     }
+
 
     @Override
     public String toString() {
         return "Director{" +
                 "employees=" + Arrays.toString(employees) +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
                 '}';
     }
 }

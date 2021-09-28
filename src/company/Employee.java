@@ -4,10 +4,17 @@ public abstract class Employee extends Person {
 
 
     private int exp;
-
+    private PROFESSION profession;
     private int basic = 1000;
 
 
+    public void setProfession(PROFESSION profession) {
+        this.profession = profession;
+    }
+
+    public PROFESSION getProfession() {
+        return profession;
+    }
 
     public Employee(String name, String surname, int exp) {
         super(name, surname);
@@ -16,7 +23,7 @@ public abstract class Employee extends Person {
     public abstract PROFESSION setProfession();
 
     public int getSalary(){
-        return basic * exp * setProfession().getKoef();
+        return basic * exp * getProfession().getKoef();
     }
 
 

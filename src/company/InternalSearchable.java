@@ -5,6 +5,6 @@ import java.util.Objects;
 public interface InternalSearchable {
 
 
-     void internalSearch(Director director, String name);
+     boolean internalSearch(Director director, String name);
 
 }

@@ -18,23 +18,13 @@ public class SearchableImpl implements Searchable, InternalSearchable {
     }
 
     @Override
-    public void internalSearch(Director director, String name) {
+    public boolean internalSearch(Director director, String name) {
         for (Employee employee : director.employees) {
-            if (Objects.equals(employee.getProfession(),PROFESSION.DIRECTOR)) {
-                for (Employee employee1 : director.employees) {
-                    if (Objects.equals(name, employee1.getName())) {
-                        System.out.println("yes");
-                    }
+            if (Objects.equals(employee.getProfession(), PROFESSION.DIRECTOR)) {
+                ((Director)director)
+                return true;
 
-
-                }
-
-
-
-
-
-            }else {System.out.println("no");}
-        }
-
+            }
+        }return false;
     }
 }

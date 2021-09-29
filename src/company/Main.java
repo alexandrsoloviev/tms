@@ -29,9 +29,9 @@ public class Main {
 
 
         SearchableImpl searchable = new SearchableImpl();
-//        System.out.println(searchable.search(((Director)director),"D2"));
-        SearchableImpl internalSearchable = new SearchableImpl();
-        System.out.println(internalSearchable.internalSearch(((Director)director),"4"));
+        System.out.println(searchable.search(((Director)director),"4"));
+
+
 
 
 

@@ -1,42 +1,40 @@
 package collections;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class UserService {
-    public static void main(String[] args) {
-        User user = new User("b", 'M', 11);
-        User user1 = new User("a", 'M', 10);
-        User user2 = new User("d", 'M', 10);
-        User user3 = new User("c", 'M', 10);
+public class UserService implements Comparable<User> {
 
+    public void findByName(List<User> list, String name) {
+        for (User u : list) {
+            if (name.equals(u.getName())) {
+                System.out.println(u);
+            }
+        }
+    }
 
-        List<User> arrayList = new ArrayList<>();
-        arrayList.add(user);
-        arrayList.add(user1);
-        arrayList.add(user2);
-        arrayList.add(user3);
-//        Collections.sort(arrayList);
-//        System.out.println(arrayList);
+    public void returnGender(List<User> list,Character gender){
+        List<User> genderList = new ArrayList<>();
+        for (User u:list) {
+            if(u.getGender().equals(gender)){
+                genderList.add(u);
+            }
 
+        }
+        System.out.println(genderList);
+    }
 
-        List<User> linkedList = new LinkedList<>();
-        linkedList.add(new User("B",'F',11));
-        linkedList.add(new User("A",'F',11));
-        linkedList.add(new User("D",'F',10));
-        linkedList.add(new User("C",'F',11));
-//        Collections.sort(linkedList);
-//        System.out.println(linkedList);
+    @Override
+    public int compareTo(User user) {
+        return user.getAge()> user.getAge()? 1:-1;
+    }
 
-
-        Set<User> hashSet = new TreeSet<>();
-        hashSet.add(new User("B",'F',11));
-        hashSet.add(new User("A",'F',11));
-        hashSet.add(new User("D",'F',111));
-        hashSet.add(new User("C",'F',11));
-        System.out.println(hashSet);
-
-
+    public void sortByAge(List<User> list){
+        Collections.sort(list);
+        System.out.println(list);
 
 
     }
 }
+

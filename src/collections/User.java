@@ -1,0 +1,74 @@
+package collections;
+
+import java.util.Comparator;
+import java.util.Objects;
+
+public class User implements Comparable<User> {
+
+    private String name;
+    private Character gender;
+    private Integer age;
+
+    public User(String name, Character gender, Integer age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+
+    public void setGender(Character gender) {
+        this.gender = gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) && Objects.equals(gender, user.gender) && Objects.equals(age, user.age);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, gender, age);
+    }
+
+    @Override
+    public int compareTo(User user) {
+        if(age >user.age){
+            return 1;
+        }else if (age < user.age) {
+            return -1;
+        }else return (this.name.compareTo(user.name));
+
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                '}';
+    }
+
+}

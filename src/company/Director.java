@@ -7,6 +7,9 @@ public class Director extends Employee {
 
      public Employee[] employees;
 
+    public Employee[] getEmployees() {
+        return employees;
+    }
 
     @Override
     public PROFESSION setProfession() {
